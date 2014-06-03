@@ -10,7 +10,7 @@
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
     <language></language>
-    <summary>Summary for "Debconf Videos"</summary>
-    <description>Description for "Debconf Videos"</description>
+    <summary>Shows the yearly Debian Conferences</summary>
+    <description>Viewing of the Debian yearly conferences</description>
   </extension>
 </addon>

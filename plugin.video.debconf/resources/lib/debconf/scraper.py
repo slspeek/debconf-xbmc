@@ -83,7 +83,7 @@ def get_videos(url):
 	keys of 'name' and 'url'.
 	'''
 	html = _html(url)
-	subjs = html.find_all('a', text=re.compile(".*\.(webm|ogv|mpeg)"))
+	subjs = html.find_all('a', text=re.compile(".*\.(webm|ogv|mpeg|avi)"))
 	items = []
 	for s in subjs:
 		href = url + s.attrs['href']

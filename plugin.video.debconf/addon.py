@@ -8,9 +8,7 @@ plugin = Plugin()
 @plugin.route('/')
 def main_menu():
 	items = [
-		{'label': 'Show years', 'path': plugin.url_for('show_years')},
-		{'label': 'Show debconf2013', 'path': plugin.url_for('show_deconf2013')},
-		{ 'label': 'Hello XBMC!', 'path': 'http://s3.amazonaws.com/KA-youtube-converted/JwO_25S_eWE.mp4/JwO_25S_eWE.mp4', 'is_playable': True }
+		{'label': 'Years', 'path': plugin.url_for('show_years')},
 	]
 	return items
 
