@@ -41,6 +41,7 @@ def get_years():
 	url = _url('')
 	html = _html(url)
 	subjs = html.find_all('a', text=re.compile("2.*"))
+	subjs = subjs[3:]
 	items = []
 	for s in subjs:
 		href = s.attrs['href']
@@ -77,7 +78,7 @@ def get_videos(url):
 	keys of 'name' and 'url'.
 	'''
 	html = _html(url)
-	subjs = html.find_all('a', text=re.compile(".*\.(webm|ogv|mpeg|avi)"))
+	subjs = html.find_all('a', text=re.compile(".*\.(webm|ogv|ogg|mpeg|avi)"))
 	items = []
 	for s in subjs:
 		href = url + s.attrs['href']
