@@ -29,9 +29,13 @@ def _html(url):
     '''Downloads the resource at the given url and parses via BeautifulSoup'''
     return BS(get(url))
 
+def get_links(url):
+	html = _html(url)
+	subjs = html.find_all('a')
+	return subjs[4:]
 
 def get_years():
-	'''Returns a list of subjects for the website. Each subject is a dict with
+	'''Returns a list of conference years for the website. Each subject is a dict with
 	keys of 'name' and 'url'.
 	'''
 	url = _url('')
@@ -47,12 +51,7 @@ def get_years():
 	return items
 
 def get_events(url):
-	'''Returns a list of subjects for the website. Each subject is a dict with
-	keys of 'name' and 'url'.
-	'''
-	html = _html(url)
-	subjs = html.find_all('a')
-	subjs = subjs[4:]
+	subjs = get_links(url)
 	items = []
 	for s in subjs:
 		href = url + s.attrs['href']
@@ -63,12 +62,6 @@ def get_events(url):
 	return items
 
 def get_formats(url):
-	'''Returns a list of subjects for the website. Each subject is a dict with
-	keys of 'name' and 'url'.
-	'''
-	html = _html(url)
-	subjs = html.find_all('a')
-	subjs = subjs[4:]
 	items = []
 	for s in subjs:
 		href = url + s.attrs['href']

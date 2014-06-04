@@ -58,17 +58,5 @@ def show_format_info(url):
 	sorted_items = sorted(items, key=lambda item: item['label'])
 	return sorted_items
 
-@plugin.route('/hack/')
-def show_deconf2013():
-	videos = get_videos('http://meetings-archive.debian.net/pub/debian-meetings/2013/debconf13/high/')
-	items = [{
-		'label': video['name'],
-		'path': video['url'],
-		'is_playable': True,
-		} for video in videos]
-
-	sorted_items = sorted(items, key=lambda item: item['label'])
-	return sorted_items
-
 if __name__ == '__main__':
     plugin.run()
