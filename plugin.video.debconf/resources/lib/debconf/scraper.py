@@ -62,6 +62,7 @@ def get_events(url):
 	return items
 
 def get_formats(url):
+	subjs = get_links(url)
 	items = []
 	for s in subjs:
 		href = url + s.attrs['href']
